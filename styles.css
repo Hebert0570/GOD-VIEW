@@ -1,0 +1,224 @@
+/* RESET BÁSICO */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GERAL DO CORPO */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #e6e9f0;
+    color: #333;
+    padding: 10px;
+}
+
+/* ESTRUTURA PRINCIPAL */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* ======================================= */
+/* CABEÇALHO (Estado Normal e Fixo) */
+/* ======================================= */
+header {
+    /* Regras de Fixação (Sticky) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+
+    /* Regras do Estado NORMAL */
+    background-color: #1a1a2e; /* COR PADRÃO */
+    color: white; 
+    padding: 30px 20px; /* PADDING PADRÃO */
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+header h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* ======================================= */
+/* CABEÇALHO (Estado Rolado - JS) */
+/* ======================================= */
+header.scrolled {
+    padding: 15px 20px; /* Encolhe o padding */
+    background-color: #1a1a2e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header.scrolled h1 {
+    font-size: 1.6em; /* Diminui a fonte */
+}
+
+header.scrolled h2 {
+    font-size: 1em; /* Diminui a fonte */
+}
+
+/* ESTILO CARD (Seções) */
+.card {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* TÍTULOS DE SEÇÃO */
+h3 {
+    color: #e84a5f;
+    border-bottom: 2px solid #e84a5f;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* LISTAS */
+ul {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: '•';
+    color: #1a1a2e;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* DESTAQUE DA DECISÃO */
+.destaque {
+    background-color: #fcebeb;
+    border-left: 5px solid #e84a5f;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.destaque p strong {
+    color: #c0392b;
+    font-size: 1.1em;
+}
+
+.consequencia-legal {
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* IMAGEM CONCEITUAL */
+.content-body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content-body p,
+.content-body ul {
+    flex: 2;
+}
+
+.image-placeholder {
+    flex: 1;
+    min-width: 200px;
+    height: 150px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* REGRA ESSENCIAL PARA IMAGENS */
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px 0;
+    font-size: 0.85em;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    .content-body {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .image-placeholder {
+        order: -1;
+        width: 100%;
+        height: 150px;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    main {
+        margin: 10px auto;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
